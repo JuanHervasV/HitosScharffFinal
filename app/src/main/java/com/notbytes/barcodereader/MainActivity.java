@@ -2,6 +2,7 @@ package com.notbytes.barcodereader;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -228,29 +229,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                         final String textItemList = (String) listView.getItemAtPosition(position);
                                         position++;
 
-
                                         if(valormoneda!=null){
-
-                                                            //Aqui enviar los datos
-                                                            //String resul = mTvResult.getText().toString();
-                                                            InsertarDatosFac insertarDatosFac = new InsertarDatosFac(textItemList, "" + DNIUsuario, "" + location.getLatitude(), "" + location.getLongitude() + "", "" + spinnerdata/*+Estado*/, textItemList.substring(2, 4), textItemList.substring(textItemList.length() - 8), textItemList.substring(textItemList.length() - 8), ""+docul);
-                                                            Call<InsertarDatosFac> callz = jsonPlaceHolderApi.createPost(insertarDatosFac);
-                                                            callz.enqueue(new Callback<InsertarDatosFac>() {
-                                                                @Override
-                                                                public void onResponse(Call<InsertarDatosFac> callo, Response<InsertarDatosFac> response) {
-                                                                    if (!response.isSuccessful()) {
-                                                                        //mJsonTxtView.setText("Codigo:" + response.code());
-                                                                        Toast.makeText(getApplicationContext(), "Datos ingresados exitosamente", Toast.LENGTH_SHORT).show();
-                                                                        return;
-                                                                    }
-                                                                    InsertarDatosFac postsResponse = response.body();
-                                                                    String content = "";
-                                                                    //content += "Estado:" + postsResponse.estado() + "\n";
-                                                                    content += "Mensaje:" + postsResponse.mensaje() + "\n";
-
-
-                                                                    Toast.makeText(getApplicationContext(), "Datos ingresados exitosamente", Toast.LENGTH_SHORT).show();
-                                                                    //mJsonTxtView.append(content);
 
                                                                     //Aqui enviar los datos
                                                                     //String resul = mTvResult.getText().toString();
@@ -261,16 +240,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                                                         public void onResponse(Call<HitoFactura> callo, Response<HitoFactura> response) {
                                                                             if (!response.isSuccessful()) {
                                                                                 //mJsonTxtView.setText("Codigo:" + response.code());
-                                                                                Toast.makeText(getApplicationContext(), "Datos ingresados exitosamente", Toast.LENGTH_SHORT).show();
+                                                                                Toast.makeText(getApplicationContext(), "Error de conexión", Toast.LENGTH_LONG).show();
                                                                                 return;
                                                                             }
                                                                             HitoFactura postsResponse = response.body();
                                                                             String content = "";
+
+                                                                            //Aqui enviar los datos
+                                                                            //String resul = mTvResult.getText().toString();
+                                                                            InsertarDatosFac insertarDatosFac = new InsertarDatosFac(textItemList, "" + DNIUsuario, "" + location.getLatitude(), "" + location.getLongitude() + "", "" + spinnerdata/*+Estado*/, textItemList.substring(2, 4), textItemList.substring(textItemList.length() - 8), textItemList.substring(textItemList.length() - 8), ""+docul);
+                                                                            Call<InsertarDatosFac> callz = jsonPlaceHolderApi.createPost(insertarDatosFac);
+                                                                            callz.enqueue(new Callback<InsertarDatosFac>() {
+                                                                                @Override
+                                                                                public void onResponse(Call<InsertarDatosFac> callo, Response<InsertarDatosFac> response) {
+                                                                                    if (!response.isSuccessful()) {
+                                                                                        //mJsonTxtView.setText("Codigo:" + response.code());
+                                                                                        Toast.makeText(getApplicationContext(), "Error de conexión", Toast.LENGTH_LONG).show();
+                                                                                        return;
+                                                                                    }
+                                                                                    InsertarDatosFac postsResponse = response.body();
+                                                                                    String content = "";
+                                                                                    //content += "Estado:" + postsResponse.estado() + "\n";
+                                                                                    content += "Mensaje:" + postsResponse.mensaje() + "\n";
+
+                                                                                    finish();
+
+                                                                                    Toast.makeText(getApplicationContext(), "MANIFIESTO INGRESADO EXITOSAMENTE", Toast.LENGTH_LONG).show();
+                                                                                    //mJsonTxtView.append(content);
                                                                             //content += "Estado:" + postsResponse.estado() + "\n";
                                                                             content += "Mensaje:" + postsResponse.mensaje() + "\n";
+                                                                                }
+                                                                                    @Override
+                                                                                    public void onFailure(Call<InsertarDatosFac> callo, Throwable t) {
+                                                                                        Toast.makeText(getApplicationContext(), "Fallo al ingresar los datos, compruebe su red.", Toast.LENGTH_LONG).show();
+                                                                                        //mJsonTxtView.setText(t.getMessage());
+                                                                                    }
+                                                                                });
 
-
-                                                                            Toast.makeText(getApplicationContext(), "Datos ingresados exitosamente", Toast.LENGTH_SHORT).show();
+                                                                            Toast.makeText(getApplicationContext(), "MANIFIESTO INGRESADO EXITOSAMENTE", Toast.LENGTH_LONG).show();
                                                                             //mJsonTxtView.append(content);
 
                                                                         }
@@ -284,14 +291,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-                                                                }
 
-                                                                @Override
-                                                                public void onFailure(Call<InsertarDatosFac> callo, Throwable t) {
-                                                                    Toast.makeText(getApplicationContext(), "Fallo al ingresar los datos, compruebe su red.", Toast.LENGTH_SHORT).show();
-                                                                    //mJsonTxtView.setText(t.getMessage());
-                                                                }
-                                                            });
+
+
 
                                         }
                                         else if(valormoneda==null){
