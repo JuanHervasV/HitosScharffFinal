@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    tools:context="com.notbytes.barcodereader.HitoFacturacls">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Datos Factura"
+        android:layout_marginTop="30dp"
+        android:textSize="30dp"
+        android:layout_gravity="center"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="Despachador: "
+
+
+        />
+
+        <EditText
+            android:id="@+id/despachNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint=""
+            android:textSize="14dp"
+            android:focusable="false"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/despachodescrip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+
+            android:textColor="@color/black"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="Transporte"
+            />
+
+        <EditText
+            android:id="@+id/transportedescripdtx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Codígo"
+            android:focusable="false"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            />
+
+        <EditText
+            android:id="@+id/transportedescrip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="COMERCIAL ELIAS A G S.A.C"
+            android:focusable="true"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listaTransporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="T/Transp"
+
+
+            />
+
+        <Spinner
+            android:id="@+id/spintransporte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3318"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/tipotransportedescrip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Terrestre"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Moneda"
+            android:textSize="18dp"
+
+
+            />
+
+        <Spinner
+            android:id="@+id/spinmoneda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PEN"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/tipomonedadescrip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NUEVO SOL"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Flete"
+            android:textSize="18dp"
+            android:layout_marginLeft="20dp"
+
+
+            />
+
+        <TextView
+            android:id="@+id/simbolomoneda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="S/."
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/valorflete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="00"
+            android:textSize="18dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="Tipo Pago"
+
+
+            />
+
+        <Spinner
+            android:id="@+id/spintipopago"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3217"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/tipopagodescrip"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:text="CONTADO"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="Documento"
+
+
+            />
+
+        <Spinner
+            android:id="@+id/spindocumento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0071"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/documentodescrip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FACTURA"
+            android:textColor="@color/black"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="Ser/Doc"
+
+
+            />
+
+        <EditText
+            android:id="@+id/seriul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="0000"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            />
+
+        <EditText
+            android:id="@+id/docul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="F591-00088947"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            />
+
+    </LinearLayout>
+
+
+    <Button
+
+        android:id="@+id/GOestadoBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="Comenzar a escanear"
+        android:layout_marginTop="20dp"
+        android:onClick="onClick"
+        android:background="@drawable/rounded_cornerneutral"
+        />
+
+
+
+
+</LinearLayout>

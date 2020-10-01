@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HitosScharff.iml" filepath="$PROJECT_DIR$/.idea/modules/HitosScharff.iml" group="HitosScharff" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/HitosScharff-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/HitosScharff-app.iml" group="HitosScharff/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/barcode-reader/HitosScharff-barcode-reader.iml" filepath="$PROJECT_DIR$/.idea/modules/barcode-reader/HitosScharff-barcode-reader.iml" group="HitosScharff/barcode-reader" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/barcode-reader/barcode-reader.iml" filepath="$PROJECT_DIR$/barcode-reader/barcode-reader.iml" />
+    </modules>
+  </component>
+</project>
